@@ -1,0 +1,25 @@
+
+// * ------------------------------------ +
+// *
+// *    01 settings / COLORS
+// *
+// * ------------------------------------ +
+
+
+$color-primary:         #CD5C5C;
+
+$color-body-bg:         #f5f5f5;
+$color-body-text:       #5A5A5A;
+
+$color-heading:         $color-primary;
+$color-link:            #4682B4;
+$color-border:          #ccc;
+
+$color-body-accent:     darken($color-body-bg, 5%);
+
+
+
+// * customize font awesome
+
+$fa-border-color:       $color-border;
+$fa-inverse:            #fff;

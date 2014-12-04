@@ -1,0 +1,250 @@
+
+// * ------------------------------------ +
+// *
+// *    09 debug / DEBUG
+// *
+// * ------------------------------------ +
+
+
+// * if 'debug-mode' is on, these styles helps you to detect invalid
+// * markup or any potentially inaccessible code. it's just a little
+// * helper, please make sure to validate your markup separat.
+// * inspired by https://github.com/csswizardry/inuit.css
+
+
+
+// * default values to optional use this file standalone
+
+$debug-mode:            false !default;
+$debug-show-grid:       true !default;
+$debug-link-title:      true !default;
+
+$debug-outline-width:   2px !default;
+$debug-outline-style:   solid !default;
+
+$debug-color-warn:      orange !default;
+$debug-text-warn:       #fff !default;
+
+$debug-color-error:     red !default;
+$debug-text-error:      #fff !default;
+
+
+
+
+
+// * functions and mixins
+
+%debug-output {
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #98FB98;
+    color: #008000;
+    padding: 3px 10px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+    z-index: 9999;
+}
+
+
+@mixin debug($type: warn, $msg: "No message.") {
+
+// * set outlines
+
+    outline-width: $debug-outline-width;
+    outline-style: $debug-outline-style;
+
+    @if $type == none {
+        outline: none;
+    }
+    @if $type == warn {
+        outline-color: $debug-color-warn;
+    }
+    @if $type == error {
+        outline-color: $debug-color-error;
+    }
+
+
+// * define message
+
+    &:hover {
+        @if $type == warn {
+            outline: $debug-outline-width $debug-outline-style $debug-color-warn;
+        }
+        @if $type == error {
+            outline: $debug-outline-width $debug-outline-style $debug-color-error;
+        }
+
+        &:after {
+            @extend %debug-output;
+
+            @if $type == none {
+                content: "";
+                display: none;
+            } @else {
+                @if $type == warn {
+                    content: "WARNING " + $msg;
+                    display: inline-block;
+                    background: $debug-color-warn;
+                    color: $debug-text-warn;
+                } @else {
+                    content: "ERROR " + $msg;
+                    display: inline-block;
+                    background: $debug-color-error;
+                    color: $debug-text-error;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+@if $debug-mode {
+
+
+// * display the active breakpoint on the upper right
+
+    html:before {
+        @extend %debug-output;
+        content: "";
+        left: inherit;
+        right: 0;
+        @media #{$small-only} { content: "current view: small"; }
+        @media #{$medium-only} { content: "current view: medium"; }
+
+        @if $include-xl-html-grid-classes {
+            @media #{$large-only} { content: "current view: large"; }
+            @media #{$xlarge-only} { content: "current view: xlarge"; }
+            @media #{$xxlarge-only} { content: "current view: xxlarge"; }
+        } @else {
+            @media #{$large-up} { content: "current view: large"; }
+        }
+    }
+
+
+
+// * show grid
+
+    @if $debug-show-grid {
+
+        $debug-grid-color: #32CD32;
+
+        .row {
+            border-bottom: 1px dashed rgba($debug-grid-color, 0.7);
+            background: rgba($debug-grid-color, 0.1);
+
+            > .column:nth-child(even),
+            > .columns:nth-child(even) {
+                background: rgba($debug-grid-color, 0.2);
+            }
+
+            > .column:nth-child(odd),
+            > .columns:nth-child(odd) {
+                background: rgba($debug-grid-color, 0.1);
+            }
+
+        }
+
+    }
+
+
+
+// * inline styles
+
+    [style] {
+        @include debug(warn, "Avoid inline styles when possible.");
+    }
+
+
+
+// * check for empty elements
+
+    :empty:not(hr):not(img):not(.#{$fa-css-prefix}) {
+        @include debug(warn, "This element is empty.");
+    }
+
+
+
+// * check alt-attributes on images
+// * please note that this check doesn't show an output message because
+// * the pseudoclasses :before and :after won't work on images natively
+
+    img {
+        @include debug(error);
+    }
+
+    img[alt] {
+        @include debug(none);
+    }
+
+    img[alt=""] {
+        @include debug(warn);
+    }
+
+
+
+// * check anchors
+
+    @if $debug-link-title {
+
+        a {
+            @include debug(warn, "This link has no title. Are u sure?");
+        }
+
+        a[title] {
+            @include debug(none);
+        }
+
+        a[href="#"],
+        a[href*="javascript"] {
+            @include debug(warn, "The 'href' is '#' or 'javascript'. Correct?");
+        }
+
+        a[target] {
+            @include debug(warn, "Here's a 'target' set, that's so old school. Correct?");
+        }
+
+    }
+
+
+
+// * check list elements
+
+    ul,
+    ol {
+        > *:not(li) {
+            @include debug(error, "Just 'li' elements allowed here.");
+        }
+    }
+
+
+
+// * check tables
+
+    table > tr {
+        @include debug(warn, "Try to insert this 'tr' to a 'tbody' or 'thead' element.");
+    }
+
+    tbody + tfoot {
+        @include debug(warn, "'tfoot' needs to come *before* 'tbody'.");
+    }
+
+
+
+// * check forms
+
+    form {
+        @include debug(error, "Forms require the 'action' attribute");
+    }
+
+    form[action] {
+        @include debug(none);
+    }
+
+}

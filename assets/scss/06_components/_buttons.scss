@@ -1,0 +1,91 @@
+
+// * ------------------------------------ +
+// *
+// *    06 components / BUTTONS
+// *
+// * ------------------------------------ +
+
+
+
+%btn {
+    @include transition(all 0.2s ease);
+    display: inline-block;
+    padding: .7em 1.2em;
+    border-radius: $base-border-radius;
+    text-decoration: none;
+    background-color: darken($color-body-bg, 15%);
+    position: relative;
+    color: $color-body-text !important;
+
+    &:hover,
+    &:focus {
+        background-color: darken($color-body-bg, 20%);
+    }
+
+    &:active {
+        background-color: darken($color-body-bg, 25%);
+        top: 1px;
+
+        &:after {
+            bottom: inherit;
+            top: 0;
+            border-radius: $base-border-radius;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+    }
+
+    &:after {
+        content: " ";
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.15);
+        left: 0;
+        bottom: 0;
+        border-bottom-right-radius: $base-border-radius;
+        border-bottom-left-radius: $base-border-radius;
+    }
+
+}
+
+
+
+// * buttons sizes
+
+.btn {
+    @extend %btn;
+}
+
+.btn-small {
+    @extend %btn;
+    padding: .65em 1em;
+    font-size: rem-calc(12);
+}
+
+.btn-large {
+    @extend %btn;
+    padding: .65em 1.4em;
+    font-size: rem-calc(20);
+}
+
+
+
+// * buttons colors
+
+.btn-primary {
+    background-color: $color-primary;
+    color: white !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: darken($color-primary, 5%);
+    }
+
+    &:active {
+        background-color: darken($color-primary, 10%);
+    }
+
+}

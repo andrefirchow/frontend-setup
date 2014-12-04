@@ -1,0 +1,55 @@
+
+// * ------------------------------------ +
+// *
+// *    07 utilities / TEXT
+// *
+// * ------------------------------------ +
+
+
+// * text alignments
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+// .text-justify {
+//     text-align: justify !important;
+// }
+
+
+// * text transforms
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+// .text-capitalize {
+//     text-transform: capitalize;
+// }
+
+
+// * text controlls
+
+.text-break-word {
+    word-wrap: break-word;
+}
+
+.text-no-wrap {
+    white-space: nowrap !important;
+}
+
+.text-truncate {
+    @include truncate(100%);
+}

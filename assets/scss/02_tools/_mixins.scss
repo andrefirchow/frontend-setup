@@ -1,0 +1,41 @@
+
+// * ------------------------------------ +
+// *
+// *    02 tools / MIXINS
+// *
+// * ------------------------------------ +
+
+
+
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+
+// * transition vendor mixin
+// * usage: @include transition(color .3s ease);
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+
+
+// * truncate long text ...
+// * usage: @include truncate(100%);
+
+@mixin truncate($width) {
+    max-width: $width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

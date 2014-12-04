@@ -1,0 +1,96 @@
+
+// * ------------------------------------ +
+// *
+// *    04 base / GLOBAL
+// *
+// * ------------------------------------ +
+
+
+
+html {
+    min-height: 100%;
+    overflow-y: scroll;
+
+    font-size: ($base-font-size - 3);
+    line-height: $base-line-height-ratio;
+    font-weight: $font-sans-regular;
+    font-family: $base-font-family;
+
+    @media #{$medium-up} {
+        font-size: $base-font-size;
+    }
+
+}
+
+
+body {
+    background: $color-body-bg;
+    color: $color-body-text;
+    position: relative;
+}
+
+
+
+// * anchors
+
+a {
+    color: $color-link;
+    line-height: inherit;
+
+    &:hover,
+    &:focus {
+        color: darken($color-link, 15%);
+    }
+
+    img { border:none; }
+
+}
+
+
+
+// * images
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    // -ms-interpolation-mode: bicubic;
+}
+
+
+
+// * ordered and unordered lists
+
+ul,
+ol {
+    margin: $space-unit 0 $space-unit $space-unit;
+    padding: 0;
+}
+
+ul {
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+ol {
+    list-style-type: none;
+    counter-reset: list;
+
+    li:before {
+        content: counters(list, ".") " ";
+        counter-increment: list;
+    }
+
+}
+
+
+
+// * horizontal ruler
+
+hr {
+    margin: $space-unit 0;
+    height: 0;
+    border: none;
+    border-top: 1px solid $color-border;
+}

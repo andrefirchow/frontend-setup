@@ -1,0 +1,24 @@
+
+// * ------------------------------------ +
+// *
+// *    06 components / LISTS
+// *
+// * ------------------------------------ +
+
+
+
+.plain-list {
+    margin-left: 0;
+    list-style-type: none;
+}
+
+
+.vertical-list {
+    margin-left: 0;
+    list-style-type: none;
+
+    > li {
+        display: inline-block;
+    }
+
+}

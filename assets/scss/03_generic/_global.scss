@@ -1,0 +1,23 @@
+
+// * ------------------------------------ +
+// *
+// *    03 generic / GLOBAL
+// *
+// * ------------------------------------ +
+
+
+// * set the box modell of all elements to 'border-box'
+
+* {
+    &,
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}
+
+
+
+// * google webfonts
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);

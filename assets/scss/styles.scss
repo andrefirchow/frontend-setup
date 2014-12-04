@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+// * -------------------------------------------------------------- +
+// *
+// * This is my starting point for (large) FrontEnd projects.
+// * Inspired by inuit.css (and ITCSS) and zurbs foundation.
+// * Created and optimized on my own experiences and preferences.
+// *
+// * by Andre Firchow (http://firchow.net/)
+// *
+// * -------------------------------------------------------------- +
+
+
+
+
+
+// * ------------------------------------ +
+// *
+// *     01 SETTINGS
+// *
+// * ------------------------------------ +
+
+// * global variables & configurations comes here
+
+@import "01_settings/config";
+@import "01_settings/colors";
+
+
+
+
+
+// * ------------------------------------ +
+// *
+// *     02 TOOLS
+// *
+// * ------------------------------------ +
+
+// * default mixins and functions.
+
+// @import "02_tools/foundation"; this one is included in settings file
+@import "02_tools/mixins";
+@import "02_tools/functions";
+
+
+
+
+
+// * ------------------------------------ +
+// *
+// *     03 GENERIC
+// *
+// * ------------------------------------ +
+
+// * no classes here. normalize, resets, box-sizing...
+
+@import "03_generic/normalize";
+@import "03_generic/global";
+
+
+
+
+
+// * ------------------------------------ +
+// *
+// *     04 BASE
+// *
+// * ------------------------------------ +
+
+// * still no classes. just type selectors goes here
+// * e.g. html, body, h1-h6, a, lists, etc.
+
+@import "04_base/global";
+@import "04_base/typo";
+@import "04_base/forms";
+@import "04_base/tables";
+
+
+
+
+
+// * ------------------------------------ +
+// *
+// *     05 OBJECTS
+// *
+// * ------------------------------------ +
+
+// * design patterns and structure things.
+// * classes from here down
+
+@import "05_objects/grid";
+
+
+
+
+
+// * ------------------------------------ +
+// *
+// *     06 COMPONENTS
+// *
+// * ------------------------------------ +
+
+// * designed components. the main area to work within the project.
+
+@import "06_components/layout";
+@import "06_components/font-awesome";
+@import "06_components/lists";
+@import "06_components/typo";
+@import "06_components/buttons";
+@import "06_components/tables";
+
+
+
+
+
+// * ------------------------------------ +
+// *
+// *     07 UTILITIES
+// *
+// * ------------------------------------ +
+
+// * helpers, overrides and utilities.
+
+@import "07_utilities/text";
+@import "07_utilities/global";
+@import "07_utilities/visibility";
+
+
+
+
+
+// * ------------------------------------ +
+// *
+// *     08 PRINT
+// *
+// * ------------------------------------ +
+
+// * print styles which may override some utilities also
+
+@import "08_print/print";
+
+
+
+
+
+// * ------------------------------------ +
+// *
+// * 09 DEBUG
+// *
+// * ------------------------------------ +
+
+// * Test and debug styles. Only for development.
+
+@import "09_debug/debug";

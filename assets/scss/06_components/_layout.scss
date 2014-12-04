@@ -1,0 +1,23 @@
+
+// * ------------------------------------ +
+// *
+// *    06 components / LAYOUT
+// *
+// * ------------------------------------ +
+
+
+
+.page-header {
+    border-bottom: 1px solid $color-border;
+    background: white;
+    padding: $space-unit 0;
+    margin-bottom: $space-unit-large;
+}
+
+.page-footer {
+    border-top: 1px solid $color-border;
+    background: $color-body-accent;
+    padding: $space-unit 0;
+    margin-top: $space-unit-large;
+    font-size: rem-calc(14);
+}

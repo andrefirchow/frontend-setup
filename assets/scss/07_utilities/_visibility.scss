@@ -1,0 +1,61 @@
+
+// * ------------------------------------ +
+// *
+// *    07 utilities / VISIBILITY
+// *
+// * ------------------------------------ +
+
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+
+
+// * show/hide classes depending on responsive breakpoints
+
+.show-for-small-only,
+.show-for-medium-only,
+.show-for-large-only,
+.show-for-xlarge-only,
+.show-for-xxlarge-only {
+    display: none;
+}
+
+.show-for-small-only {
+    @media #{$small-only} { display: inherit; }
+}
+
+.show-for-medium-only {
+    @media #{$medium-only} { display: inherit; }
+}
+
+@if $include-xl-html-grid-classes {
+
+    .show-for-large-only {
+        @media #{$large-only} { display: inherit; }
+    }
+
+    .show-for-xlarge-only {
+        @media #{$xlarge-only} { display: inherit; }
+    }
+
+    .show-for-xxlarge-only {
+        @media #{$xxlarge-only} { display: inherit; }
+    }
+
+} @else {
+
+    .show-for-large-only {
+        @media #{$large-up} { display: inherit; }
+    }
+
+}
