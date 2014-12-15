@@ -53,3 +53,19 @@
 .text-truncate {
     @include truncate(100%);
 }
+
+
+
+// * responsive alignments per viewport
+
+.small-only-text-center {
+    @media #{$small-only} { text-align: center !important; }
+}
+
+.medium-only-text-center {
+    @media #{$medium-only} { text-align: center !important; }
+}
+
+.large-only-text-center {
+    @media #{$large-only} { text-align: center !important; }
+}
