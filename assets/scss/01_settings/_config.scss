@@ -6,9 +6,11 @@
 // * ------------------------------------ +
 
 
-$debug-mode:       true;
-$debug-show-grid:  false;
-$debug-link-title: false;
+$debug-mode:      	 	false;
+$debug-warn:      	 	false;
+$debug-show-grid: 	 	false;
+$debug-link-title:	 	false;
+$debug-inline-styles:	false;
 
 
 
@@ -22,15 +24,16 @@ $base-line-height-ratio: $base-line-height / $base-font-size;
 
 // * font settings
 
-$font-face-sans: "Open Sans", "Arial", sans-serif;;
+$font-face-sans: "Open Sans", "Arial", sans-serif;
+$font-sans-light: 300;
 $font-sans-regular: 400;
 $font-sans-bold: 700;
 
-$font-face-serif: Georgia,Times,"Times New Roman",serif;
+$font-face-serif: Georgia, Times, "Times New Roman", serif;
 $font-serif-regular: 400;
 $font-serif-bold: 700;
 
-$font-face-mono: "Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",monospace;
+$font-face-mono: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 $font-mono-regular: 400;
 $font-mono-bold: 700;
 
@@ -47,14 +50,24 @@ $space-unit-large: rem-calc(48);
 
 
 
+// * layout settings
+
+$header-height: 84px;
+$header-height-scrolled: 42px;
+$submenu-width: 220px;
+$accent-line-width: 75px;
+
+
+
 // * customize foundation grid
 
-$row-width: rem-calc(1100);
+$row-width: rem-calc(1400);
 $total-columns: 12;
 $column-gutter: rem-calc(40);
 $include-xl-html-grid-classes: false; // included grid classes 'xlarge' and 'xxlarge'
-$include-centered-grid: true;
+$include-centered-grid: false;
 $include-push-pull-grid: true;
+$include-collapse-grid: true;
 $last-child-float: left;
 
 
@@ -65,12 +78,37 @@ $fa-font-path:        "../fonts/font-awesome/";
 $fa-css-prefix:       fa;
 $fa-li-width:         (30em / 14);
 
+$icon-circle-size: 		rem-calc(54);
+
+
+
+// * customize mmenu
+
+$mm_width       : 0.8;
+$mm_minWidth    : 140px;
+$mm_maxWidth    : 460px;
+
+$mm_height      : 0.8;
+$mm_minHeight   : 140px;
+$mm_maxHeight   : 880px;
+
+$mm_btnSize     : 40px;
+$mm_padding     : 16px;
+$mm_fontSize    : $base-font-size;
+
+$mm_subpanelOffset  : 30%;
+$mm_subopenWidth    : 50px;
+
+$mm_arrowSize: 10px;
+
 
 
 // * Media Query Ranges
 
-$small-range: (0em, 30em); /* 0, 480px */
-$medium-range: (30.025em, 64em); /* 481px, 1024px */
+// $small-range: (0em, 30em); /* 0, 480px */
+// $medium-range: (30.025em, 64em); /* 481px, 1024px */
+$small-range: (0em, 37.5em); /* 0, 600px */
+$medium-range: (37.563em, 64em); /* 601px, 1024px */
 $large-range: (64.063em, 90em); /* 1025px, 1440px */
 $xlarge-range: (90.063em, 120em); /* 1441px, 1920px */
 $xxlarge-range: (120.063em); /* 1921px */
@@ -104,3 +142,49 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
 $small: $medium-up;
 $medium: $medium-up;
 $large: $large-up;
+
+
+
+// * magnific popup settings
+
+// overlay
+$mfp-overlay-color:                   #0b0b0b;                    // Color of overlay screen
+$mfp-overlay-opacity:                 0.8;                        // Opacity of overlay screen
+$mfp-shadow:                          0 0 8px rgba(0, 0, 0, 0.6); // Shadow on image or iframe
+
+// spacing
+$mfp-popup-padding-left:              20px;         			  // Padding from left and from right side
+$mfp-popup-padding-left-mobile:       10px;                       // Same as above, but is applied when width of window is less than 800px
+
+$mfp-z-index-base:                    1040;                       // Base z-index of popup
+
+// controls
+$mfp-include-arrows:                  false;                      // Include styles for nav arrows
+$mfp-controls-opacity:                0.65;                       // Opacity of controls
+$mfp-controls-color:                  #FFF;                       // Color of controls
+$mfp-controls-border-color:           #3F3F3F; 	                  // Border color of controls
+$mfp-inner-close-icon-color:          #333;                       // Color of close button when inside
+$mfp-controls-text-color:             #CCC;                       // Color of preloader and "1 of X" indicator
+$mfp-controls-text-color-hover:       #FFF;                       // Hover color of preloader and "1 of X" indicator
+$mfp-IE7support:                      true;                       // Very basic IE7 support
+
+// Iframe-type options
+$mfp-include-iframe-type:             true;                       // Enable Iframe-type popups
+$mfp-iframe-padding-top:              40px;                       // Iframe padding top
+$mfp-iframe-background:               #000;                       // Background color of iframes
+$mfp-iframe-max-width:                rem-calc(1000);             // Maximum width of iframes
+$mfp-iframe-ratio:                    9/16;                       // Ratio of iframe (9/16 = widescreen, 3/4 = standard, etc.)
+
+// Image-type options
+$mfp-include-image-type:              true;                       // Enable Image-type popups
+$mfp-image-background:                #444 !default;
+$mfp-image-padding-top:               40px;    					  // Image padding top
+$mfp-image-padding-bottom:            20px;          			  // Image padding bottom
+$mfp-include-mobile-layout-for-image: true;                       // Removes paddings from top and bottom
+
+// Image caption options
+$mfp-caption-title-color:             #F3F3F3;                    // Caption title color
+$mfp-caption-subtitle-color:          #BDBDBD;                    // Caption subtitle color
+
+// A11y
+$mfp-use-visuallyhidden:              false; 

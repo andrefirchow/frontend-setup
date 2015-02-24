@@ -44,7 +44,7 @@ $row-width: rem-calc(1000) !default;
 $total-columns: 12 !default;
 $column-gutter: rem-calc(20) !default;
 
-$include-html-grid-classes: true !default;
+// $include-html-grid-classes: true !default;
 $include-xl-html-grid-classes: false !default;
 $include-centered-grid: true !default;
 $include-push-pull-grid: true !default;
@@ -58,7 +58,7 @@ $opposite-direction: right !default;
 // * include grid classes
 
 @include exports("grid") {
-  @if $include-html-grid-classes {
+  // @if $include-html-grid-classes {
     .row {
       @include grid-row;
 
@@ -66,7 +66,10 @@ $opposite-direction: right !default;
          > .column,
          > .columns { @include grid-column($collapse:true, $float:false); }
 
-        .row {margin-left:0; margin-right:0;}
+        .row {
+          margin-left:0 !important;
+          margin-right:0 !important;
+        }
       }
 
       .row { @include grid-row($behavior:nest);
@@ -90,14 +93,18 @@ $opposite-direction: right !default;
     @media #{$large-up} {
       @include grid-html-classes($size:large);
     }
-  }
+  // }
+
   @if $include-xl-html-grid-classes {
+
     @media #{$xlarge-up} {
       @include grid-html-classes($size:xlarge);
     }
+
     @media #{$xxlarge-up} {
       @include grid-html-classes($size:xxlarge);
     }
+    
   }
   
 }

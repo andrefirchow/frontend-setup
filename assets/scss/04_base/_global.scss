@@ -8,16 +8,19 @@
 
 
 html {
-    min-height: 100%;
     overflow-y: scroll;
 
-    font-size: ($base-font-size - 3);
+    font-size: ($base-font-size - 2);
     line-height: $base-line-height-ratio;
     font-weight: $font-sans-regular;
     font-family: $base-font-family;
 
     @media #{$medium-up} {
         font-size: $base-font-size;
+    }
+
+    &.touch {
+        -webkit-overflow-scrolling: touch;
     }
 
 }
@@ -27,6 +30,7 @@ body {
     background: $color-body-bg;
     color: $color-body-text;
     position: relative;
+    min-height: 100%;
 }
 
 

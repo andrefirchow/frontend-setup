@@ -39,3 +39,16 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+
+
+// * include vendor prefixes
+// * usage: @include vendor-prefix(hyphens, auto);
+
+// @mixin vendor-prefix($name, $argument) {
+//   -webkit-#{$name}: #{$argument};
+//   -ms-#{$name}: #{$argument};
+//   -moz-#{$name}: #{$argument};
+//   -o-#{$name}: #{$argument};
+//   #{$name}: #{$argument};
+// }

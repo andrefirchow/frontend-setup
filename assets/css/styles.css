@@ -1,6 +1,6 @@
 @charset "UTF-8";
-/* 0, 480px */
-/* 481px, 1024px */
+/* 0, 600px */
+/* 601px, 1024px */
 /* 1025px, 1440px */
 /* 1441px, 1920px */
 /* 1921px */
@@ -10,7 +10,7 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 /* line 17, ../scss/03_generic/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -450,42 +450,46 @@ th {
 
 /* line 10, ../scss/04_base/_global.scss */
 html {
-  min-height: 100%;
   overflow-y: scroll;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
   font-weight: 400;
   font-family: "Open Sans", "Arial", sans-serif;
 }
-@media only screen and (min-width: 30.025em) {
+@media only screen and (min-width: 37.563em) {
   /* line 10, ../scss/04_base/_global.scss */
   html {
     font-size: 16px;
   }
 }
+/* line 22, ../scss/04_base/_global.scss */
+html.touch {
+  -webkit-overflow-scrolling: touch;
+}
 
-/* line 26, ../scss/04_base/_global.scss */
+/* line 29, ../scss/04_base/_global.scss */
 body {
   background: #f5f5f5;
   color: #5A5A5A;
   position: relative;
+  min-height: 100%;
 }
 
-/* line 36, ../scss/04_base/_global.scss */
+/* line 40, ../scss/04_base/_global.scss */
 a {
   color: #4682B4;
   line-height: inherit;
 }
-/* line 40, ../scss/04_base/_global.scss */
+/* line 44, ../scss/04_base/_global.scss */
 a:hover, a:focus {
   color: #315a7d;
 }
-/* line 45, ../scss/04_base/_global.scss */
+/* line 49, ../scss/04_base/_global.scss */
 a img {
   border: none;
 }
 
-/* line 53, ../scss/04_base/_global.scss */
+/* line 57, ../scss/04_base/_global.scss */
 img {
   max-width: 100%;
   height: auto;
@@ -493,31 +497,31 @@ img {
   vertical-align: middle;
 }
 
-/* line 65, ../scss/04_base/_global.scss */
+/* line 69, ../scss/04_base/_global.scss */
 ul,
 ol {
   margin: 1.5rem 0 1.5rem 1.5rem;
   padding: 0;
 }
 
-/* line 71, ../scss/04_base/_global.scss */
+/* line 75, ../scss/04_base/_global.scss */
 ul {
   list-style-type: square;
   list-style-position: inside;
 }
 
-/* line 76, ../scss/04_base/_global.scss */
+/* line 80, ../scss/04_base/_global.scss */
 ol {
   list-style-type: none;
   counter-reset: list;
 }
-/* line 80, ../scss/04_base/_global.scss */
+/* line 84, ../scss/04_base/_global.scss */
 ol li:before {
   content: counters(list,".") " ";
   counter-increment: list;
 }
 
-/* line 91, ../scss/04_base/_global.scss */
+/* line 95, ../scss/04_base/_global.scss */
 hr {
   margin: 1.5rem 0;
   height: 0;
@@ -530,17 +534,17 @@ h1, h2, h3 {
   font-weight: 400;
 }
 
-/* line 16, ../scss/04_base/_typo.scss */
+/* line 17, ../scss/04_base/_typo.scss */
 h4, h5, h6 {
-  font-weight: 700;
+  font-weight: 400;
 }
 
-/* line 20, ../scss/04_base/_typo.scss */
+/* line 21, ../scss/04_base/_typo.scss */
 h1, h2, h3, h4, h5, h6 {
   color: #CD5C5C;
   margin: 1em 0;
 }
-/* line 24, ../scss/04_base/_typo.scss */
+/* line 25, ../scss/04_base/_typo.scss */
 h1 small,
 h1 span, h2 small,
 h2 span, h3 small,
@@ -548,64 +552,68 @@ h3 span, h4 small,
 h4 span, h5 small,
 h5 span, h6 small,
 h6 span {
-  color: #df9797;
+  opacity: 0.5;
+}
+/* line 30, ../scss/04_base/_typo.scss */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  text-decoration: none;
 }
 
-/* line 31, ../scss/04_base/_typo.scss */
+/* line 36, ../scss/04_base/_typo.scss */
 h1 {
-  font-size: 3rem;
+  font-size: 2.75rem;
   line-height: 1.1;
 }
 
-/* line 32, ../scss/04_base/_typo.scss */
+/* line 37, ../scss/04_base/_typo.scss */
 h2 {
   font-size: 2rem;
   line-height: 1.2;
 }
 
-/* line 33, ../scss/04_base/_typo.scss */
+/* line 38, ../scss/04_base/_typo.scss */
 h3 {
   font-size: 1.5rem;
   line-height: 1.3;
 }
 
-/* line 34, ../scss/04_base/_typo.scss */
+/* line 39, ../scss/04_base/_typo.scss */
 h4 {
   font-size: 1.25rem;
   line-height: 1.4;
 }
 
-/* line 35, ../scss/04_base/_typo.scss */
+/* line 40, ../scss/04_base/_typo.scss */
 h5 {
   font-size: 1.125rem;
 }
 
-/* line 36, ../scss/04_base/_typo.scss */
+/* line 41, ../scss/04_base/_typo.scss */
 h6 {
   font-size: 1rem;
 }
 
-/* line 42, ../scss/04_base/_typo.scss */
+/* line 47, ../scss/04_base/_typo.scss */
 p {
   margin: 1.5rem 0;
 }
 
-/* line 46, ../scss/04_base/_typo.scss */
+/* line 52, ../scss/04_base/_typo.scss */
 small {
-  font-size: 70%;
+  font-size: 75%;
 }
 
-/* line 50, ../scss/04_base/_typo.scss */
+/* line 56, ../scss/04_base/_typo.scss */
 strong {
   font-weight: 700;
 }
 
-/* line 54, ../scss/04_base/_typo.scss */
+/* line 60, ../scss/04_base/_typo.scss */
 abbr {
   cursor: help;
 }
 
-/* line 62, ../scss/04_base/_typo.scss */
+/* line 68, ../scss/04_base/_typo.scss */
 code {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
   display: inline-block;
@@ -615,13 +623,19 @@ code {
   color: #CD5C5C;
 }
 
-/* line 71, ../scss/04_base/_typo.scss */
+/* line 77, ../scss/04_base/_typo.scss */
 mark {
   display: inline-block;
   padding: 0 0.3125rem;
   background: #e5aaaa;
   border-radius: 2px;
-  color: #5A5A5A;
+  color: #fff;
+}
+
+/* line 9, ../scss/04_base/_forms.scss */
+textarea {
+  resize: vertical;
+  min-height: 1.5rem;
 }
 
 /* line 10, ../scss/04_base/_tables.scss */
@@ -636,7 +650,7 @@ td {
   text-align: left;
   padding: 0.3125rem;
 }
-@media only screen and (min-width: 30.025em) {
+@media only screen and (min-width: 37.563em) {
   /* line 15, ../scss/04_base/_tables.scss */
   th,
   td {
@@ -696,7 +710,7 @@ td {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 68.75rem;
+  max-width: 87.5rem;
 }
 /* line 11, ../scss/02_tools/_mixins.scss */
 .row:after {
@@ -712,10 +726,10 @@ td {
 }
 /* line 69, ../scss/05_objects/_grid.scss */
 .row.collapse .row {
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
-/* line 72, ../scss/05_objects/_grid.scss */
+/* line 75, ../scss/05_objects/_grid.scss */
 .row .row {
   width: auto;
   margin-left: -1.25rem;
@@ -730,7 +744,7 @@ td {
   display: table;
   clear: both;
 }
-/* line 73, ../scss/05_objects/_grid.scss */
+/* line 76, ../scss/05_objects/_grid.scss */
 .row .row.collapse {
   width: auto;
   margin: 0;
@@ -743,7 +757,7 @@ td {
   clear: both;
 }
 
-/* line 77, ../scss/05_objects/_grid.scss */
+/* line 80, ../scss/05_objects/_grid.scss */
 .column,
 .columns {
   padding-left: 1.25rem;
@@ -752,12 +766,12 @@ td {
   float: left;
 }
 
-/* line 80, ../scss/05_objects/_grid.scss */
+/* line 83, ../scss/05_objects/_grid.scss */
 [class*="column"] + [class*="column"]:last-child {
   float: left;
 }
 
-/* line 81, ../scss/05_objects/_grid.scss */
+/* line 84, ../scss/05_objects/_grid.scss */
 [class*="column"] + [class*="column"].end {
   float: left;
 }
@@ -1069,41 +1083,26 @@ td {
     float: left;
   }
 
-  /* line 269, ../scss/02_tools/_foundation.scss */
-  .column.small-centered,
-  .columns.small-centered {
-    margin-left: auto;
-    margin-right: auto;
-    float: none;
+  /* line 304, ../scss/02_tools/_foundation.scss */
+  .row.small-collapse > .column,
+  .row.small-collapse > .columns {
+    padding-left: 0;
+    padding-right: 0;
   }
-
-  /* line 272, ../scss/02_tools/_foundation.scss */
-  .column.small-uncentered,
-  .columns.small-uncentered {
+  /* line 307, ../scss/02_tools/_foundation.scss */
+  .row.small-collapse .row {
     margin-left: 0;
     margin-right: 0;
+  }
+  /* line 311, ../scss/02_tools/_foundation.scss */
+  .row.small-uncollapse > .column,
+  .row.small-uncollapse > .columns {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
     float: left;
-  }
-
-  /* line 280, ../scss/02_tools/_foundation.scss */
-  .column.small-centered:last-child,
-  .columns.small-centered:last-child {
-    float: none;
-  }
-
-  /* line 286, ../scss/02_tools/_foundation.scss */
-  .column.small-uncentered:last-child,
-  .columns.small-uncentered:last-child {
-    float: left;
-  }
-
-  /* line 291, ../scss/02_tools/_foundation.scss */
-  .column.small-uncentered.opposite,
-  .columns.small-uncentered.opposite {
-    float: right;
   }
 }
-@media only screen and (min-width: 30.025em) {
+@media only screen and (min-width: 37.563em) {
   /* line 238, ../scss/02_tools/_foundation.scss */
   .medium-push-0 {
     position: relative;
@@ -1410,38 +1409,23 @@ td {
     float: left;
   }
 
-  /* line 269, ../scss/02_tools/_foundation.scss */
-  .column.medium-centered,
-  .columns.medium-centered {
-    margin-left: auto;
-    margin-right: auto;
-    float: none;
+  /* line 304, ../scss/02_tools/_foundation.scss */
+  .row.medium-collapse > .column,
+  .row.medium-collapse > .columns {
+    padding-left: 0;
+    padding-right: 0;
   }
-
-  /* line 272, ../scss/02_tools/_foundation.scss */
-  .column.medium-uncentered,
-  .columns.medium-uncentered {
+  /* line 307, ../scss/02_tools/_foundation.scss */
+  .row.medium-collapse .row {
     margin-left: 0;
     margin-right: 0;
+  }
+  /* line 311, ../scss/02_tools/_foundation.scss */
+  .row.medium-uncollapse > .column,
+  .row.medium-uncollapse > .columns {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
     float: left;
-  }
-
-  /* line 280, ../scss/02_tools/_foundation.scss */
-  .column.medium-centered:last-child,
-  .columns.medium-centered:last-child {
-    float: none;
-  }
-
-  /* line 286, ../scss/02_tools/_foundation.scss */
-  .column.medium-uncentered:last-child,
-  .columns.medium-uncentered:last-child {
-    float: left;
-  }
-
-  /* line 291, ../scss/02_tools/_foundation.scss */
-  .column.medium-uncentered.opposite,
-  .columns.medium-uncentered.opposite {
-    float: right;
   }
 }
 @media only screen and (min-width: 64.063em) {
@@ -1751,41 +1735,26 @@ td {
     float: left;
   }
 
-  /* line 269, ../scss/02_tools/_foundation.scss */
-  .column.large-centered,
-  .columns.large-centered {
-    margin-left: auto;
-    margin-right: auto;
-    float: none;
+  /* line 304, ../scss/02_tools/_foundation.scss */
+  .row.large-collapse > .column,
+  .row.large-collapse > .columns {
+    padding-left: 0;
+    padding-right: 0;
   }
-
-  /* line 272, ../scss/02_tools/_foundation.scss */
-  .column.large-uncentered,
-  .columns.large-uncentered {
+  /* line 307, ../scss/02_tools/_foundation.scss */
+  .row.large-collapse .row {
     margin-left: 0;
     margin-right: 0;
+  }
+  /* line 311, ../scss/02_tools/_foundation.scss */
+  .row.large-uncollapse > .column,
+  .row.large-uncollapse > .columns {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
     float: left;
-  }
-
-  /* line 280, ../scss/02_tools/_foundation.scss */
-  .column.large-centered:last-child,
-  .columns.large-centered:last-child {
-    float: none;
-  }
-
-  /* line 286, ../scss/02_tools/_foundation.scss */
-  .column.large-uncentered:last-child,
-  .columns.large-uncentered:last-child {
-    float: left;
-  }
-
-  /* line 291, ../scss/02_tools/_foundation.scss */
-  .column.large-uncentered.opposite,
-  .columns.large-uncentered.opposite {
-    float: right;
   }
 }
-/* line 106, ../scss/05_objects/_grid.scss */
+/* line 113, ../scss/05_objects/_grid.scss */
 .row.full {
   width: 100%;
   margin-left: auto;
@@ -4460,6 +4429,27 @@ td {
   text-overflow: ellipsis;
 }
 
+@media only screen and (max-width: 37.5em) {
+  /* line 61, ../scss/07_utilities/_text.scss */
+  .small-only-text-center {
+    text-align: center !important;
+  }
+}
+
+@media only screen and (min-width: 37.563em) and (max-width: 64em) {
+  /* line 65, ../scss/07_utilities/_text.scss */
+  .medium-only-text-center {
+    text-align: center !important;
+  }
+}
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+  /* line 69, ../scss/07_utilities/_text.scss */
+  .large-only-text-center {
+    text-align: center !important;
+  }
+}
+
 /* line 11, ../scss/02_tools/_mixins.scss */
 .clearfix:after {
   content: "";
@@ -4506,14 +4496,14 @@ td {
   display: none;
 }
 
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 37.5em) {
   /* line 33, ../scss/07_utilities/_visibility.scss */
   .show-for-small-only {
     display: inherit;
   }
 }
 
-@media only screen and (min-width: 30.025em) and (max-width: 64em) {
+@media only screen and (min-width: 37.563em) and (max-width: 64em) {
   /* line 37, ../scss/07_utilities/_visibility.scss */
   .show-for-medium-only {
     display: inherit;
@@ -4703,216 +4693,4 @@ td {
   .page-break-after {
     page-break-after: always;
   }
-}
-/* line 37, ../scss/09_debug/_debug.scss */
-html:before, [style]:hover:after, :empty:not(hr):not(img):not(.fa):hover:after, img:hover:after, img[alt]:hover:after, img[alt=""]:hover:after, ul > *:not(li):hover:after,
-ol > *:not(li):hover:after, table > tr:hover:after, tbody + tfoot:hover:after, form:hover:after, form[action]:hover:after {
-  display: inline-block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #98FB98;
-  color: #008000;
-  padding: 3px 10px;
-  font-size: 14px;
-  font-family: Arial, sans-serif;
-  font-weight: normal;
-  line-height: 1.5;
-  z-index: 9999;
-}
-
-/* line 113, ../scss/09_debug/_debug.scss */
-html:before {
-  content: "";
-  left: inherit;
-  right: 0;
-}
-@media only screen and (max-width: 30em) {
-  /* line 113, ../scss/09_debug/_debug.scss */
-  html:before {
-    content: "current view: small";
-  }
-}
-@media only screen and (min-width: 30.025em) and (max-width: 64em) {
-  /* line 113, ../scss/09_debug/_debug.scss */
-  html:before {
-    content: "current view: medium";
-  }
-}
-@media only screen and (min-width: 64.063em) {
-  /* line 113, ../scss/09_debug/_debug.scss */
-  html:before {
-    content: "current view: large";
-  }
-}
-
-/* line 160, ../scss/09_debug/_debug.scss */
-[style] {
-  outline-width: 2px;
-  outline-style: solid;
-  outline-color: orange;
-}
-/* line 73, ../scss/09_debug/_debug.scss */
-[style]:hover {
-  outline: 2px solid orange;
-}
-/* line 81, ../scss/09_debug/_debug.scss */
-[style]:hover:after {
-  content: "WARNING Avoid inline styles when possible.";
-  display: inline-block;
-  background: orange;
-  color: #fff;
-}
-
-/* line 168, ../scss/09_debug/_debug.scss */
-:empty:not(hr):not(img):not(.fa) {
-  outline-width: 2px;
-  outline-style: solid;
-  outline-color: orange;
-}
-/* line 73, ../scss/09_debug/_debug.scss */
-:empty:not(hr):not(img):not(.fa):hover {
-  outline: 2px solid orange;
-}
-/* line 81, ../scss/09_debug/_debug.scss */
-:empty:not(hr):not(img):not(.fa):hover:after {
-  content: "WARNING This element is empty.";
-  display: inline-block;
-  background: orange;
-  color: #fff;
-}
-
-/* line 178, ../scss/09_debug/_debug.scss */
-img {
-  outline-width: 2px;
-  outline-style: solid;
-  outline-color: red;
-}
-/* line 73, ../scss/09_debug/_debug.scss */
-img:hover {
-  outline: 2px solid red;
-}
-/* line 81, ../scss/09_debug/_debug.scss */
-img:hover:after {
-  content: "ERROR No message.";
-  display: inline-block;
-  background: red;
-  color: #fff;
-}
-
-/* line 182, ../scss/09_debug/_debug.scss */
-img[alt] {
-  outline-width: 2px;
-  outline-style: solid;
-  outline: none;
-}
-/* line 81, ../scss/09_debug/_debug.scss */
-img[alt]:hover:after {
-  content: "";
-  display: none;
-}
-
-/* line 186, ../scss/09_debug/_debug.scss */
-img[alt=""] {
-  outline-width: 2px;
-  outline-style: solid;
-  outline-color: orange;
-}
-/* line 73, ../scss/09_debug/_debug.scss */
-img[alt=""]:hover {
-  outline: 2px solid orange;
-}
-/* line 81, ../scss/09_debug/_debug.scss */
-img[alt=""]:hover:after {
-  content: "WARNING No message.";
-  display: inline-block;
-  background: orange;
-  color: #fff;
-}
-
-/* line 221, ../scss/09_debug/_debug.scss */
-ul > *:not(li),
-ol > *:not(li) {
-  outline-width: 2px;
-  outline-style: solid;
-  outline-color: red;
-}
-/* line 73, ../scss/09_debug/_debug.scss */
-ul > *:not(li):hover,
-ol > *:not(li):hover {
-  outline: 2px solid red;
-}
-/* line 81, ../scss/09_debug/_debug.scss */
-ul > *:not(li):hover:after,
-ol > *:not(li):hover:after {
-  content: "ERROR Just 'li' elements allowed here.";
-  display: inline-block;
-  background: red;
-  color: #fff;
-}
-
-/* line 230, ../scss/09_debug/_debug.scss */
-table > tr {
-  outline-width: 2px;
-  outline-style: solid;
-  outline-color: orange;
-}
-/* line 73, ../scss/09_debug/_debug.scss */
-table > tr:hover {
-  outline: 2px solid orange;
-}
-/* line 81, ../scss/09_debug/_debug.scss */
-table > tr:hover:after {
-  content: "WARNING Try to insert this 'tr' to a 'tbody' or 'thead' element.";
-  display: inline-block;
-  background: orange;
-  color: #fff;
-}
-
-/* line 234, ../scss/09_debug/_debug.scss */
-tbody + tfoot {
-  outline-width: 2px;
-  outline-style: solid;
-  outline-color: orange;
-}
-/* line 73, ../scss/09_debug/_debug.scss */
-tbody + tfoot:hover {
-  outline: 2px solid orange;
-}
-/* line 81, ../scss/09_debug/_debug.scss */
-tbody + tfoot:hover:after {
-  content: "WARNING 'tfoot' needs to come *before* 'tbody'.";
-  display: inline-block;
-  background: orange;
-  color: #fff;
-}
-
-/* line 242, ../scss/09_debug/_debug.scss */
-form {
-  outline-width: 2px;
-  outline-style: solid;
-  outline-color: red;
-}
-/* line 73, ../scss/09_debug/_debug.scss */
-form:hover {
-  outline: 2px solid red;
-}
-/* line 81, ../scss/09_debug/_debug.scss */
-form:hover:after {
-  content: "ERROR Forms require the 'action' attribute";
-  display: inline-block;
-  background: red;
-  color: #fff;
-}
-
-/* line 246, ../scss/09_debug/_debug.scss */
-form[action] {
-  outline-width: 2px;
-  outline-style: solid;
-  outline: none;
-}
-/* line 81, ../scss/09_debug/_debug.scss */
-form[action]:hover:after {
-  content: "";
-  display: none;
 }
