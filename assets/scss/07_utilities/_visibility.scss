@@ -59,3 +59,16 @@
     }
 
 }
+
+
+.hide-on-small {
+    @media #{$small-only} { display: none; }
+}
+
+.hide-on-medium {
+    @media #{$medium-only} { display: none; }
+}
+
+.hide-on-large {
+    @media #{$large-up} { display: none; }
+}

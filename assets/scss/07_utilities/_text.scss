@@ -6,6 +6,7 @@
 // * ------------------------------------ +
 
 
+
 // * text alignments
 
 .text-left {
@@ -20,9 +21,9 @@
     text-align: center !important;
 }
 
-// .text-justify {
-//     text-align: justify !important;
-// }
+.text-justify {
+    text-align: justify !important;
+}
 
 
 // * text transforms
@@ -35,9 +36,10 @@
     text-transform: lowercase;
 }
 
-// .text-capitalize {
-//     text-transform: capitalize;
-// }
+.text-capitalize {
+    text-transform: capitalize;
+}
+
 
 
 // * text controlls
@@ -48,6 +50,10 @@
 
 .text-no-wrap {
     white-space: nowrap !important;
+}
+
+.text-dont-break-out {
+    @include word-wrap();
 }
 
 .text-truncate {

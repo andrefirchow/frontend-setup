@@ -1,0 +1,30 @@
+
+// * ------------------------------------ +
+// *
+// *    06 components / LAYOUT EXAMPLE 1
+// *
+// * ------------------------------------ +
+
+
+
+.wrapper-parallax-footer {
+	margin-bottom: 60px;
+
+	.page-footer {
+		width: 100%;
+		position: fixed;
+		z-index: -1;
+		bottom: 0;
+		height: 60px;
+		border: none;
+	}
+
+	.page-content {
+		min-height: 100vh; // just 4 development
+		background: $color-body-bg;
+		position: relative;
+		z-index: 1;
+		border-bottom: 1px solid $color-border;
+	}
+
+}

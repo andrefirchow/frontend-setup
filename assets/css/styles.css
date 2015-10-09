@@ -1762,6 +1762,64 @@ td {
   max-width: initial;
 }
 
+/*
+
+  Example usage
+
+  <div class="flag">
+      <div class="flag__image">
+          <img src="" alt="">
+      </div>
+      <div class="flag__body">
+          <p></p>
+      </div>
+  </div>
+
+*/
+@media only screen and (min-width: 37.563em) {
+  /* line 34, ../scss/05_objects/_flag.scss */
+  .flag {
+    display: table;
+    width: 100%;
+  }
+
+  /* line 39, ../scss/05_objects/_flag.scss */
+  .flag__media,
+  .flag__body {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  /* line 44, ../scss/05_objects/_flag.scss */
+  .flag--top .flag__media, .flag--top
+  .flag__body {
+    vertical-align: top;
+  }
+  /* line 48, ../scss/05_objects/_flag.scss */
+  .flag--bottom .flag__media, .flag--bottom
+  .flag__body {
+    vertical-align: bottom;
+  }
+
+  /* line 54, ../scss/05_objects/_flag.scss */
+  .flag__media {
+    padding-right: 1.5rem;
+  }
+  /* line 57, ../scss/05_objects/_flag.scss */
+  .flag__media > img {
+    display: block;
+    max-width: none;
+  }
+  /* line 62, ../scss/05_objects/_flag.scss */
+  .flag--rev .flag__media {
+    padding-right: 0;
+    padding-left: 1.5rem;
+  }
+
+  /* line 69, ../scss/05_objects/_flag.scss */
+  .flag__body {
+    width: 100%;
+  }
+}
 /* line 10, ../scss/06_components/_layout.scss */
 .page-header {
   border-bottom: 1px solid #ccc;
@@ -4386,42 +4444,86 @@ td {
   font-size: 0.8125rem;
 }
 
-/* line 11, ../scss/07_utilities/_text.scss */
+/* line 10, ../scss/06_components/_layout-example-1.scss */
+.wrapper-parallax-footer {
+  margin-bottom: 60px;
+}
+/* line 13, ../scss/06_components/_layout-example-1.scss */
+.wrapper-parallax-footer .page-footer {
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  bottom: 0;
+  height: 60px;
+  border: none;
+}
+/* line 22, ../scss/06_components/_layout-example-1.scss */
+.wrapper-parallax-footer .page-content {
+  min-height: 100vh;
+  background: #f5f5f5;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+/* line 12, ../scss/07_utilities/_text.scss */
 .text-left {
   text-align: left !important;
 }
 
-/* line 15, ../scss/07_utilities/_text.scss */
+/* line 16, ../scss/07_utilities/_text.scss */
 .text-right {
   text-align: right !important;
 }
 
-/* line 19, ../scss/07_utilities/_text.scss */
+/* line 20, ../scss/07_utilities/_text.scss */
 .text-center {
   text-align: center !important;
 }
 
-/* line 30, ../scss/07_utilities/_text.scss */
+/* line 24, ../scss/07_utilities/_text.scss */
+.text-justify {
+  text-align: justify !important;
+}
+
+/* line 31, ../scss/07_utilities/_text.scss */
 .text-uppercase {
   text-transform: uppercase;
 }
 
-/* line 34, ../scss/07_utilities/_text.scss */
+/* line 35, ../scss/07_utilities/_text.scss */
 .text-lowercase {
   text-transform: lowercase;
 }
 
-/* line 45, ../scss/07_utilities/_text.scss */
+/* line 39, ../scss/07_utilities/_text.scss */
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+/* line 47, ../scss/07_utilities/_text.scss */
 .text-break-word {
   word-wrap: break-word;
 }
 
-/* line 49, ../scss/07_utilities/_text.scss */
+/* line 51, ../scss/07_utilities/_text.scss */
 .text-no-wrap {
   white-space: nowrap !important;
 }
 
-/* line 53, ../scss/07_utilities/_text.scss */
+/* line 55, ../scss/07_utilities/_text.scss */
+.text-dont-break-out {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* line 59, ../scss/07_utilities/_text.scss */
 .text-truncate {
   max-width: 100%;
   white-space: nowrap;
@@ -4430,21 +4532,21 @@ td {
 }
 
 @media only screen and (max-width: 37.5em) {
-  /* line 61, ../scss/07_utilities/_text.scss */
+  /* line 67, ../scss/07_utilities/_text.scss */
   .small-only-text-center {
     text-align: center !important;
   }
 }
 
 @media only screen and (min-width: 37.563em) and (max-width: 64em) {
-  /* line 65, ../scss/07_utilities/_text.scss */
+  /* line 71, ../scss/07_utilities/_text.scss */
   .medium-only-text-center {
     text-align: center !important;
   }
 }
 
 @media only screen and (min-width: 64.063em) and (max-width: 90em) {
-  /* line 69, ../scss/07_utilities/_text.scss */
+  /* line 75, ../scss/07_utilities/_text.scss */
   .large-only-text-center {
     text-align: center !important;
   }
@@ -4514,6 +4616,27 @@ td {
   /* line 57, ../scss/07_utilities/_visibility.scss */
   .show-for-large-only {
     display: inherit;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  /* line 64, ../scss/07_utilities/_visibility.scss */
+  .hide-on-small {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 37.563em) and (max-width: 64em) {
+  /* line 68, ../scss/07_utilities/_visibility.scss */
+  .hide-on-medium {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 64.063em) {
+  /* line 72, ../scss/07_utilities/_visibility.scss */
+  .hide-on-large {
+    display: none;
   }
 }
 
